@@ -1,0 +1,32 @@
+{
+  "name": "mre-slide-show",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "built/server.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "tsc --build --clean",
+    "build": "tsc --build",
+    "lint": "tslint -p ./tsconfig.json src/**/*.ts",
+    "start": "node .",
+    "debug": "node --nolazy --inspect-brk=9229 ."
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.0",
+    "@types/puppeteer": "^1.12.3",
+    "@types/uuid": "^3.4.3",
+    "tslint": "5.11.0",
+    "typescript": "3.0.3"
+  },
+  "dependencies": {
+    "@microsoft/gltf-gen": "^0.9.3",
+    "@microsoft/mixed-reality-extension-sdk": "^0.9.3",
+    "@types/node": "^10.3.1",
+    "dotenv": "^6.2.0",
+    "puppeteer": "^1.14.0",
+    "uuid": "^3.2.1"
+  }
+}
