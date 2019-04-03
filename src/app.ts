@@ -47,7 +47,7 @@ export default class App {
             await this.page.goto(slidesUri);
             // Render the first screenshot.
             await this.renderSlide();
-            // Start rendering one screenshot per second.
+            // Start rendering at 30 screenshots per second.
             this.timer = setInterval(async () => await this.renderSlide(), 1000 / 30);
         } catch (e) {
             console.log(e);
