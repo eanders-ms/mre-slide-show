@@ -48,18 +48,18 @@ export default class App {
             // Render the first screenshot.
             await this.renderSlide();
             // Start rendering at 30 screenshots per second.
-            this.timer = setInterval(async () => await this.renderSlide(), 1000 / 30);
+            this.timer = setInterval(() => this.renderSlide(), 1000 / 30);
         } catch (e) {
             console.log(e);
         }
     }
 
-    private stopped() {
+    private async stopped() {
         // Stop rendering slides.
         try { clearInterval(this.timer); } catch { }
         // Close the browser.
-        try { this.page.close(); } catch { }
-        try { this.browser.close(); } catch { }
+        try { await this.page.close(); } catch { }
+        try { await this.browser.close(); } catch { }
         this.timer = null;
         this.page = null;
         this.browser = null;
